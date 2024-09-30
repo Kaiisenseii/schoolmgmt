@@ -1,44 +1,51 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+      {% block title %}
+        DjangoSMS
+      {% endblock %}
+    </title>
 
-    <title>{% block title %}DjangoSMS{% endblock title %}</title>
-
-    <link rel="shortcut icon" href="{% static 'img/favicon.png' %}" type="image/x-icon">
+    <link rel="shortcut icon" href="{% static 'img/favicon.png' %}" type="image/x-icon" />
 
     <!-- Fontawesome icons -->
-    <link rel="stylesheet" type="text/css" href="{% static 'vendor/fontawesome-6.5.1/css/all.min.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Bootstrap5 -->
-    <link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap-5.3.2/css/bootstrap.min.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.min.css' %}" />
 
     <!-- <script src="https://js.stripe.com/v3/"></script> -->
-    {% block header %}{% endblock %}
-</head>
+    {% block header %}
 
-<body>
+    {% endblock %}
+  </head>
+
+  <body>
     {% block sidebar %}
-        {% include 'aside.html' %}
+      {% include 'aside.html' %}
     {% endblock %}
 
     {% block maincontent %}
-    <div id="main">
+      <div id="main">
         {% block topbar %}
-            {% include 'navbar.html' %}
+          {% include 'navbar.html' %}
         {% endblock %}
 
         <div class="container-fluid" id="main-content">
-            {% block content %}{% endblock content %}
-        </div>
+          {% block content %}
 
-    </div>
+          {% endblock %}
+        </div>
+      </div>
     {% endblock %}
 
     <script type="text/javascript" src="{% static 'vendor/jquery-3.7.1/jquery-3.7.1.min.js' %}"></script>
@@ -47,7 +54,7 @@
     <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
 
     {% block js %}
-    {% endblock js %}
-</body>
 
+    {% endblock %}
+  </body>
 </html>
